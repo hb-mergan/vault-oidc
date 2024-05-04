@@ -1,0 +1,40 @@
+version: '2.4'
+
+services:
+  vault:
+    image: hashicorp/vault:${VAULT_VERSION}
+    container_name: vault
+    ports:
+      - ${VAULT_PORT}:${VAULT_PORT}
+    volumes:
+      - vault-file:/vault/file
+    environment:
+      VAULT_ADDR: ${VAULT_ADDR}:${VAULT_PORT}
+    cap_add:
+      - IPC_LOCK
+    networks:
+      - openldap
+    depends_on:
+      - openldap
+  openldap:
+    image: osixia/openldap:1.5.0
+    container_name: openldap
+    ports:
+      - ${LDAP_PORT}:${LDAP_PORT}
+    volumes:
+      - ./ldap/:/ldap/
+    environment:
+      - LDAP_ADMIN_USERNAME=${LDAP_ADMIN_USERNAME}
+      - LDAP_ADMIN_PASSWORD=${LDAP_ADMIN_PASSWORD}
+      - LDAP_DOMAIN=${LDAP_DOMAIN}
+      - LDAP_SEED_INTERNAL_LDIF_PATH=/ldap/
+      - LDAP_LOG_LEVEL=256  # Set detailed logging (debug)
+    networks:
+      - openldap
+
+volumes:
+  vault-file:
+
+networks:
+  openldap:
+    driver: bridge
