@@ -1,0 +1,6 @@
+ldap_address  = "ldap://openldap:389"
+ldap_binddn   = "cn=admin,dc=example,dc=com"
+ldap_bindpass = "admin"
+ldap_userdn   = "ou=users,dc=example,dc=com"
+ldap_userattr = "cn"
+ldap_groupdn  = "ou=groups,dc=example,dc=com"
