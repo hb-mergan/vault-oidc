@@ -1,0 +1,21 @@
+dn: cn=admins,ou=groups,dc=example,dc=com
+cn: admins
+objectClass: groupOfNames
+objectClass: top
+member: cn=alice,ou=users,dc=example,dc=com
+
+dn: cn=editors,ou=groups,dc=example,dc=com
+cn: editors
+objectClass: groupOfNames
+member: cn=bob,ou=users,dc=example,dc=com
+
+dn: cn=backend,ou=groups,dc=example,dc=com
+cn: backend
+objectClass: groupOfNames
+member: cn=carol,ou=users,dc=example,dc=com
+member: cn=bob,ou=users,dc=example,dc=com
+
+dn: cn=frontend,ou=groups,dc=example,dc=com
+cn: frontend
+objectClass: groupOfNames
+member: cn=carol,ou=users,dc=example,dc=com

@@ -1,0 +1,26 @@
+dn: cn=alice,ou=users,dc=example,dc=com
+userPassword: alicePassword
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+sn: Johnson
+cn: alice
+
+dn: cn=bob,ou=users,dc=example,dc=com
+userPassword: bobPassword
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+sn: Smith
+cn: bob
+
+dn: cn=carol,ou=users,dc=example,dc=com
+userPassword: carolPassword
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+objectClass: organizationalPerson
+sn: White
+cn: carol
