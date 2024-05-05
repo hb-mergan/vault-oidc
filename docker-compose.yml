@@ -5,7 +5,7 @@ services:
     image: hashicorp/vault:${VAULT_VERSION}
     container_name: vault
     ports:
-      - ${VAULT_PORT}:${VAULT_PORT}
+      - "127.0.0.1:${VAULT_PORT}:${VAULT_PORT}"
     volumes:
       - vault-file:/vault/file
     environment:
