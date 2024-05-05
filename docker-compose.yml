@@ -10,6 +10,7 @@ services:
       - vault-file:/vault/file
     environment:
       VAULT_ADDR: ${VAULT_ADDR}:${VAULT_PORT}
+      VAULT_DEV_ROOT_TOKEN_ID: ${VAULT_DEV_ROOT_TOKEN_ID}
     cap_add:
       - IPC_LOCK
     networks:
